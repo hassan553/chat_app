@@ -1,4 +1,5 @@
 import 'package:chat_app/binding.dart';
+import 'package:chat_app/features/auth/ui/views/register.dart';
 import 'package:chat_app/features/oboarding/ui/views/onboarding_view.dart';
 import 'package:chat_app/features/oboarding/ui/views/splash_view.dart';
 import 'package:flutter/material.dart';
@@ -23,7 +24,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       initialBinding: Binding(),
-      home: const OnboardingView(),
+      home: const SplashView(),
     );
   }
 }

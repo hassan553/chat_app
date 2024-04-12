@@ -10,8 +10,8 @@ import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/app_strings.dart';
 import '../../../../core/widget/custom_text_field.dart';
 
-class LoginView extends StatelessWidget {
-  const LoginView({super.key});
+class NewPasswordView extends StatelessWidget {
+  const NewPasswordView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -36,11 +36,11 @@ class LoginView extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              AppStrings.login,
+              AppStrings.newPassword,
               style: CustomTextStyle.f60030.copyWith(color: AppColors.white),
             ),
             Text(
-              AppStrings.enterDetailsLogin,
+              AppStrings.enterDetailsNewPassword,
               style: CustomTextStyle.f40016.copyWith(color: AppColors.white),
             ),
           ],
@@ -55,44 +55,25 @@ class LoginView extends StatelessWidget {
             SizedBox(height: Get.height * .08),
             const CustomTextField(
               fillColor: Colors.transparent,
-              labelText: AppStrings.email,
-              hintText: AppStrings.enterYourEmail,
-              style: CustomTextStyle.f50016,
-            ),
-            SizedBox(height: Get.height * .025),
-            const CustomTextField(
-              fillColor: Colors.transparent,
               labelText: AppStrings.password,
               hintText: AppStrings.enterYourPassword,
               password: true,
               style: CustomTextStyle.f50016,
             ),
-            CustomTextButton(
-              onTap: () => Get.to(const ForgetPassword()),
-              text: AppStrings.forgotPassword,
-              style: CustomTextStyle.f50020
-                  .copyWith(color: AppColors.primaryColor),
+            SizedBox(height: Get.height * .025),
+            const CustomTextField(
+              fillColor: Colors.transparent,
+              labelText: AppStrings.confirmPassword,
+              hintText: AppStrings.enterYourPassword,
+              password: true,
+              style: CustomTextStyle.f50016,
             ),
             SizedBox(height: Get.height * .15),
             CustomButton(
               function: () {},
-              title: AppStrings.signIn,
+              title: AppStrings.newPassword,
             ),
             SizedBox(height: Get.height * .02),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                const Text(
-                  AppStrings.dontHaveAccount,
-                  style: CustomTextStyle.f40012,
-                ),
-                CustomTextButton(
-                  onTap: () => Get.to(const RegisterView()),
-                  text: AppStrings.signUp,
-                  style: CustomTextStyle.f60012,
-                )
-              ],
-            )
           ],
         ),
       )

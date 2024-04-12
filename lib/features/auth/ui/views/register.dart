@@ -1,8 +1,7 @@
 import 'package:chat_app/core/theme/text_theme.dart';
 import 'package:chat_app/core/widget/custom_button.dart';
 import 'package:chat_app/core/widget/custom_text_button.dart';
-import 'package:chat_app/features/auth/ui/views/forget_password.dart';
-import 'package:chat_app/features/auth/ui/views/register.dart';
+import 'package:chat_app/features/auth/ui/views/loigin_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -10,8 +9,8 @@ import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/app_strings.dart';
 import '../../../../core/widget/custom_text_field.dart';
 
-class LoginView extends StatelessWidget {
-  const LoginView({super.key});
+class RegisterView extends StatelessWidget {
+  const RegisterView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -36,11 +35,11 @@ class LoginView extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              AppStrings.login,
+              AppStrings.register,
               style: CustomTextStyle.f60030.copyWith(color: AppColors.white),
             ),
             Text(
-              AppStrings.enterDetailsLogin,
+              AppStrings.enterDetailsRegister,
               style: CustomTextStyle.f40016.copyWith(color: AppColors.white),
             ),
           ],
@@ -67,13 +66,15 @@ class LoginView extends StatelessWidget {
               password: true,
               style: CustomTextStyle.f50016,
             ),
-            CustomTextButton(
-              onTap: () => Get.to(const ForgetPassword()),
-              text: AppStrings.forgotPassword,
-              style: CustomTextStyle.f50020
-                  .copyWith(color: AppColors.primaryColor),
+            SizedBox(height: Get.height * .025),
+            const CustomTextField(
+              fillColor: Colors.transparent,
+              labelText: AppStrings.confirmPassword,
+              hintText: AppStrings.reEnterPassword,
+              password: true,
+              style: CustomTextStyle.f50016,
             ),
-            SizedBox(height: Get.height * .15),
+            SizedBox(height: Get.height * .1),
             CustomButton(
               function: () {},
               title: AppStrings.signIn,
@@ -83,16 +84,17 @@ class LoginView extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 const Text(
-                  AppStrings.dontHaveAccount,
+                  AppStrings.alreadyHaveAccount,
                   style: CustomTextStyle.f40012,
                 ),
                 CustomTextButton(
-                  onTap: () => Get.to(const RegisterView()),
-                  text: AppStrings.signUp,
+                  onTap: () => Get.to(const LoginView()),
+                  text: AppStrings.signIn,
                   style: CustomTextStyle.f60012,
                 )
               ],
-            )
+            ),
+            const SizedBox(height: 20),
           ],
         ),
       )

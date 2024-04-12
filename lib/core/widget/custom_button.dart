@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../utils/app_colors.dart';
 
 class CustomButton extends StatelessWidget {
   final String title;
@@ -24,12 +25,16 @@ class CustomButton extends StatelessWidget {
       child: MaterialButton(
         minWidth: width ?? double.infinity,
         height: 55,
-        color: color,
+        color: color ?? AppColors.primaryColor,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
         onPressed: function,
         child: Text(
           title,
-          style: textStyle,
+          style: const TextStyle(
+            color: Colors.white,
+            fontSize: 18,
+            fontWeight: FontWeight.w500,
+          ),
         ),
       ),
     );
